@@ -1,0 +1,41 @@
+--- python-ecore-0.7.3/ecore.orig/x/ecore.x.c_ecore_x_events.pxi	2010-10-01 01:03:45.000000000 +0200
++++ python-ecore-0.7.3/ecore/x/ecore.x.c_ecore_x_events.pxi	2011-12-17 07:33:50.278741055 +0100
+@@ -300,16 +300,6 @@
+         return 1
+ 
+ 
+-cdef class EventDesktopChange(ecore.c_ecore.Event):
+-    cdef int _set_obj(self, void *o) except 0:
+-        cdef Ecore_X_Event_Window_Prop_Desktop_Change *obj
+-        obj = <Ecore_X_Event_Window_Prop_Desktop_Change *>o
+-        self.win = Window_from_xid(obj.win)
+-        self.desktop = obj.desktop
+-        self.time = obj.time
+-        return 1
+-
+-
+ cdef class EventPing(ecore.c_ecore.Event):
+     cdef int _set_obj(self, void *o) except 0:
+         cdef Ecore_X_Event_Ping *obj
+--- python-ecore-0.7.3/ecore/evas.orig/ecore.evas.c_ecore_evas.pyx	2010-10-01 01:03:45.000000000 +0200
++++ python-ecore-0.7.3/ecore/evas/ecore.evas.c_ecore_evas.pyx	2011-12-17 08:34:01.652195310 +0100
+@@ -50,7 +50,7 @@
+     "software_ddraw": ECORE_EVAS_ENGINE_SOFTWARE_DDRAW,
+     "direct3d": ECORE_EVAS_ENGINE_DIRECT3D,
+     "opengl_glew": ECORE_EVAS_ENGINE_OPENGL_GLEW,
+-    "cocoa": ECORE_EVAS_ENGINE_COCOA,
++    "cocoa": ECORE_EVAS_ENGINE_OPENGL_COCOA,
+     "sdl": ECORE_EVAS_ENGINE_SOFTWARE_SDL,
+     "directfb": ECORE_EVAS_ENGINE_DIRECTFB,
+     "fb": ECORE_EVAS_ENGINE_SOFTWARE_FB,
+--- python-ecore-0.7.3/include/ecore/evas/c_ecore_evas.pxd.orig	2010-10-01 01:03:45.000000000 +0200
++++ python-ecore-0.7.3/include/ecore/evas/c_ecore_evas.pxd	2011-12-17 08:34:31.408862972 +0100
+@@ -42,7 +42,7 @@
+         ECORE_EVAS_ENGINE_SOFTWARE_DDRAW
+         ECORE_EVAS_ENGINE_DIRECT3D
+         ECORE_EVAS_ENGINE_OPENGL_GLEW
+-        ECORE_EVAS_ENGINE_COCOA
++        ECORE_EVAS_ENGINE_OPENGL_COCOA
+         ECORE_EVAS_ENGINE_SOFTWARE_SDL
+         ECORE_EVAS_ENGINE_DIRECTFB
+         ECORE_EVAS_ENGINE_SOFTWARE_FB

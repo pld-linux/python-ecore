@@ -1,0 +1,31 @@
+--- python-ecore-0.7.3/ecore.orig/ecore.c_ecore_exe.pxi	2010-10-01 01:03:45.000000000 +0200
++++ python-ecore-0.7.3/ecore/ecore.c_ecore_exe.pxi	2011-12-17 07:23:14.155386420 +0100
+@@ -91,7 +91,7 @@
+ 
+ 
+ cdef class ExeEventFilter:
+-    def __new__(self, *a, **ka):
++    def __cinit__(self, *a, **ka):
+         self.exe = NULL
+         self.handler = NULL
+         self.owner = None
+@@ -280,7 +280,7 @@
+     One may delete handlers explicitly with L{EventHandler.delete()}
+     method.
+     """
+-    def __new__(self, *a, **ka):
++    def __cinit__(self, *a, **ka):
+         self.exe = NULL
+         self.__data = None
+         self.__callbacks = {}
+--- python-ecore-0.7.3/ecore/evas.orig/ecore.evas.c_ecore_evas_base.pxi	2010-10-01 01:03:45.000000000 +0200
++++ python-ecore-0.7.3/ecore/evas/ecore.evas.c_ecore_evas_base.pxi	2011-12-17 08:06:00.698805690 +0100
+@@ -203,7 +203,7 @@
+      callback_pre_render, callback_resize, callback_show, callback_sticky,
+      callback_unsticky
+     """
+-    def __new__(self, *args, **kargs):
++    def __cinit__(self, *args, **kargs):
+         self.obj = NULL
+         self.data = dict()
+ 
