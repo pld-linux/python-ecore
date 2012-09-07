@@ -1,28 +1,27 @@
 Summary:	Python bindings for Ecore library
 Summary(pl.UTF-8):	Wiązania Pythona do biblioteki Ecore
 Name:		python-ecore
-Version:	0.7.3
+Version:	1.7.0
 Release:	1
 License:	LGPL v2.1+
 Group:		Development/Languages/Python
 Source0:	http://download.enlightenment.org/releases/BINDINGS/python/%{name}-%{version}.tar.bz2
-# Source0-md5:	a972aa785e708d9fac45ab52895a78e8
-Patch0:		%{name}-cython.patch
-Patch1:		%{name}-update.patch
+# Source0-md5:	15dd908b71d09ef30f7e758739f3b6fd
 URL:		http://trac.enlightenment.org/e/wiki/Python
-BuildRequires:	ecore-devel >= 1.0.0
-BuildRequires:	ecore-evas-devel >= 1.0.0
-BuildRequires:	ecore-imf-devel >= 1.0.0
-BuildRequires:	ecore-x-devel >= 1.0.0
+BuildRequires:	ecore-devel >= 1.7.0
+BuildRequires:	ecore-evas-devel >= 1.7.0
+BuildRequires:	ecore-file-devel >= 1.7.0
+BuildRequires:	ecore-imf-devel >= 1.7.0
+BuildRequires:	ecore-x-devel >= 1.7.0
 BuildRequires:	epydoc
 BuildRequires:	evas-devel >= 1.0.0
-BuildRequires:	python-Cython >= 0.13
-BuildRequires:	python-devel >= 1:2.5
-BuildRequires:	python-evas-devel >= 0.7.3
+BuildRequires:	python-Cython >= 0.15.1
+BuildRequires:	python-devel >= 1:2.7
+BuildRequires:	python-evas-devel >= 1.7.0
 BuildRequires:	rpm-pythonprov
 BuildRequires:	pkgconfig >= 1:0.22
 BuildRequires:	rpmbuild(macros) >= 1.219
-Requires:	ecore >= 1.0.0
+Requires:	ecore >= 1.7.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -36,7 +35,7 @@ Summary:	Python bindings for Ecore library - development files
 Summary(pl.UTF-8):	Wiązania Pythona do biblioteki Ecore - pliki programistyczne
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	ecore-devel >= 1.0.0
+Requires:	ecore-devel >= 1.7.0
 
 %description devel
 Python bindings for Ecore library - development files.
@@ -49,9 +48,9 @@ Summary:	Python bindings for Ecore Evas library
 Summary(pl.UTF-8):	Wiązania Pythona do biblioteki Ecore Evas
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}-%{release}
-Requires:	ecore-evas >= 1.0.0
-Requires:	evas >= 1.0.0
-Requires:	python-evas >= 0.7.3
+Requires:	ecore-evas >= 1.7.0
+Requires:	evas >= 1.7.0
+Requires:	python-evas >= 1.7.0
 
 %description evas
 Python bindings for Ecore Evas library.
@@ -65,7 +64,7 @@ Summary(pl.UTF-8):	Wiązania Pythona do biblioteki Ecore Evas - pliki programist
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Requires:	%{name}-evas = %{version}-%{release}
-Requires:	ecore-evas-devel >= 1.0.0
+Requires:	ecore-evas-devel >= 1.7.0
 Requires:	python-evas-devel >= 0.7.3
 
 %description evas-devel
@@ -74,12 +73,39 @@ Python bindings for Ecore Evas library - development files.
 %description evas-devel -l pl.UTF-8
 Wiązania Pythona do biblioteki Ecore Evas - pliki programistyczne.
 
+%package file
+Summary:	Python bindings for Ecore File library
+Summary(pl.UTF-8):	Wiązania Pythona do biblioteki Ecore File
+Group:		Development/Languages/Python
+Requires:	%{name} = %{version}-%{release}
+Requires:	ecore-file >= 1.7.0
+
+%description file
+Python bindings for Ecore File library.
+
+%description file -l pl.UTF-8
+Wiązania Pythona do biblioteki Ecore File.
+
+%package file-devel
+Summary:	Python bindings for Ecore File library - development files
+Summary(pl.UTF-8):	Wiązania Pythona do biblioteki Ecore File - pliki programistyczne
+Group:		Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
+Requires:	%{name}-file = %{version}-%{release}
+Requires:	ecore-file-devel >= 1.7.0
+
+%description file-devel
+Python bindings for Ecore File library - development files.
+
+%description file-devel -l pl.UTF-8
+Wiązania Pythona do biblioteki Ecore File - pliki programistyczne.
+
 %package imf
 Summary:	Python bindings for Ecore IMF library
 Summary(pl.UTF-8):	Wiązania Pythona do biblioteki Ecore IMF
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}-%{release}
-Requires:	ecore-imf >= 1.0.0
+Requires:	ecore-imf >= 1.7.0
 
 %description imf
 Python bindings for Ecore IMF library.
@@ -93,7 +119,7 @@ Summary(pl.UTF-8):	Wiązania Pythona do biblioteki Ecore IMF - pliki programisty
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Requires:	%{name}-imf = %{version}-%{release}
-Requires:	ecore-imf-devel >= 1.0.0
+Requires:	ecore-imf-devel >= 1.7.0
 
 %description imf-devel
 Python bindings for Ecore IMF library - development files.
@@ -106,7 +132,7 @@ Summary:	Python bindings for Ecore X library
 Summary(pl.UTF-8):	Wiązania Pythona do biblioteki Ecore X
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}-%{release}
-Requires:	ecore-x >= 1.0.0
+Requires:	ecore-x >= 1.7.0
 
 %description x
 Python bindings for Ecore X library.
@@ -120,7 +146,7 @@ Summary(pl.UTF-8):	Wiązania Pythona do biblioteki Ecore X - pliki programistycz
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Requires:	%{name}-x = %{version}-%{release}
-Requires:	ecore-x-devel >= 1.0.0
+Requires:	ecore-x-devel >= 1.7.0
 
 %description x-devel
 Python bindings for Ecore X library - development files.
@@ -130,8 +156,6 @@ Wiązania Pythona do biblioteki Ecore X - pliki programistyczne.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
 
 %build
 %configure \
@@ -160,8 +184,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS README
 %dir %{py_sitedir}/ecore
 %attr(755,root,root) %{py_sitedir}/ecore/c_ecore.so
-%dir %{py_sitescriptdir}/ecore
-%{py_sitescriptdir}/ecore/__init__.py[co]
+%{py_sitedir}/ecore/__init__.py[co]
 %dir %{_examplesdir}/%{name}-%{version}
 %{_examplesdir}/%{name}-%{version}/*.py
 
@@ -178,7 +201,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %dir %{py_sitedir}/ecore/evas
 %attr(755,root,root) %{py_sitedir}/ecore/evas/c_ecore_evas.so
-%{py_sitescriptdir}/ecore/evas
+%{py_sitedir}/ecore/evas/__init__.py[co]
 %{_examplesdir}/%{name}-%{version}/ecore-evas
 
 %files evas-devel
@@ -186,11 +209,24 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/python-ecore/ecore/evas
 %{_pkgconfigdir}/python-ecore-evas.pc
 
+%files file
+%defattr(644,root,root,755)
+%dir %{py_sitedir}/ecore/file
+%attr(755,root,root) %{py_sitedir}/ecore/file/c_ecore_file.so
+%{py_sitedir}/ecore/file/__init__.py[co]
+
+%files file-devel
+%defattr(644,root,root,755)
+%dir %{_includedir}/python-ecore/ecore/file
+%{_includedir}/python-ecore/ecore/file/__init__.py
+%{_includedir}/python-ecore/ecore/file/c_ecore_file.pxd
+%{_pkgconfigdir}/python-ecore-file.pc
+
 %files imf
 %defattr(644,root,root,755)
 %dir %{py_sitedir}/ecore/imf
 %attr(755,root,root) %{py_sitedir}/ecore/imf/c_ecore_imf.so
-%{py_sitescriptdir}/ecore/imf
+%{py_sitedir}/ecore/imf/__init__.py[co]
 
 %files imf-devel
 %defattr(644,root,root,755)
@@ -201,7 +237,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %dir %{py_sitedir}/ecore/x
 %attr(755,root,root) %{py_sitedir}/ecore/x/c_ecore_x.so
-%{py_sitescriptdir}/ecore/x
+%{py_sitedir}/ecore/x/__init__.py[co]
 %{_examplesdir}/%{name}-%{version}/x
 
 %files x-devel
