@@ -3,7 +3,7 @@ Summary:	Python bindings for Ecore library
 Summary(pl.UTF-8):	Wiązania Pythona do biblioteki Ecore
 Name:		python-ecore
 Version:	1.7.0
-Release:	14
+Release:	15
 License:	LGPL v2.1+
 Group:		Development/Languages/Python
 Source0:	http://download.enlightenment.org/releases/BINDINGS/python/%{name}-%{version}.tar.bz2
